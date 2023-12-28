@@ -1,10 +1,10 @@
-import { Application } from "express";
-import express from "express";
+import express, { Application } from "express";
 import logger from "morgan";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-const FRONTEND_URL = process.env.ORIGIN || "http://localhost:3000";
+const FRONTEND_URL = process.env.CLIENT || "http://127.0.0.1:5006";
+console.log(FRONTEND_URL, "se");
 
 const middleWare = (app: Application) => {
   app.set("trust proxy", 1);
